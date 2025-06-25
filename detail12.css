@@ -1,0 +1,226 @@
+/* 全体のリセット */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #e4f2ef;
+  color: #5b5656;
+  line-height: 1.5;
+  padding-bottom: 100px; /* ← 下にスペースを追加 */
+}
+
+/* ヘッダーエリア */
+.main-header {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.header-text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.header-fade {
+   width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-mask-image: radial-gradient(ellipse at center,rgba(0,0,0,1)75%,rgba(0,0,0,0.8)85%,rgba(0,0,0,0)100%);
+  mask-image: radial-gradient(ellipse at center,rgba(0,0,0,1)75%,rgba(0,0,0,0.8)85%,rgba(0,0,0,0)100%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+
+.title-group .subtitle-near-title {
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+}
+
+.totle-group .title-main {
+  font-size: 2.5rem;
+  font-family: 'Limelight', cursive;
+  margin: 10px 0;
+}
+
+.header-subtext {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+main {
+  text-align: center; /* ← これが中央寄せの決め手 */
+}
+
+h1 {
+  display: inline-block;
+  background: linear-gradient(transparent 70%, #a7d6ff 70%);
+  margin: 30px auto;
+}
+
+
+/* 見出し */
+main h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+/* コンテンツエリア */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.image-box {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-width: 500px; /* ← 必要に応じて追加 */
+  padding: 10px;
+}
+
+
+.image-box img {
+  width: 100%;
+  max-width: 500px;
+  height: 650px; /* ← ここを追加・調整 */
+  object-fit: cover; /* アスペクト比を保ちつつ切り取り */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.text-box {
+  flex: 1 1 55%;
+  min-width: 280px;
+  padding: 20px;
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  line-height: 1.7;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.image-box {
+  position: relative; /* 子要素の絶対配置に必要 */
+  flex: 1 1 40%;       /* 画像40%幅（以前のレイアウトを維持） */
+  min-width: 280px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  gap: 1px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  position: relative; /* これを追加 */
+}
+
+.text-box {
+  position: relative; /* 基準となる親 */
+  padding: 15px 20px;
+  padding: 20px 20px 10px 20px; /* ボタン分のスペースを下に確保 */
+  /* 他のスタイルはそのまま */
+  line-height: 1.4;
+  flex: 1;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.button-container {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  display: flex;      /* 横並びにする */
+  gap: 12px;          /* ボタン間の余白 */
+  flex-wrap: wrap;    /* 小画面で折り返し */
+  justify-content: center;
+}
+
+
+.back-button:hover {
+  transform: translateY(-4px); /* 少し大きめに浮かせる */
+  box-shadow: 0 6px 12px rgba(240, 238, 238, 0.15); /* 影を追加して立体感 */
+}
+
+.back-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* ← 追加 */
+  display: inline-block;
+}
+
+
+a.back-button,
+a.next-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  background-color: #77c3df;
+  color: white;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+a.back-button:hover,
+a.next-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(240, 238, 238, 0.15);
+}
+
+/* ヘッダーのリンクに影響を与えないためのリセット */
+.main-header a {
+  all: unset; /* すべてのスタイルをリセット */
+  color: white;
+  text-decoration: none;
+  font-family: 'Yuji Syuku', serif; /* 好みのフォント指定 */
+  cursor: default; /* リンクでないならポインター外す */
+}
+a.prev-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  background-color: #77c3df;
+  color: white;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+a.prev-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(240, 238, 238, 0.15);
+}
+
+.text-box strong {      /* 説明文のタイトルにマーカーを引く */
+  background: linear-gradient(transparent 70%, #a7d6ff 70%); /* 水色マーカー */
+  padding: 0 2px;
+}
